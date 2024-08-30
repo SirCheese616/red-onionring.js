@@ -2,6 +2,9 @@
 // it's licensed under the cooperative non-violent license (CNPL) v4+ (https://thufie.lain.haus/NPL.html)
 // it was originally made by joey + mord of allium (蒜) house, last updated 2020-11-24
 
+// red-onionring.js is an onionring.js fork with additional features
+// https://github.com/cheesepak/red-onionring.js
+
 // === ONIONRING-WIDGET ===
 //this file contains the code which builds the widget shown on each page in the ring. ctrl+f 'EDIT THIS' if you're looking to change the actual html of the widget
 
@@ -9,6 +12,11 @@ var tag = document.getElementById(ringID); //find the widget on the page
 
 thisSite = window.location.href; //get the url of the site we're currently on
 thisIndex = null;
+
+// red-onionring.js: if you've chosen to sort alphabetically, this sorts the sites
+if(useSort) {
+  sites = sites.sort();
+}
 
 // go through the site list to see if this site is on it and find its position
 for (i = 0; i < sites.length; i++) {
@@ -54,19 +62,38 @@ else {
     randomText = `<a href='javascript:void(0)' onclick='randomSite()'>random</a> | `;
   }
 
-  //this is the code that displays the widget - EDIT THIS if you want to change the structure
-  tag.insertAdjacentHTML('afterbegin', `
-  <table>
-    <tr>
-      <td class='webring-prev'><a href='${sites[previousIndex]}'>← previous</a></td>
-      <td class='webring-info'>This site is part of the ${ringName} webring</br>
-      <span class='webring-links'>
-        ${randomText}
-        ${indexText}
-        <a href='https://garlic.garden/onionring/'>what is this?</a></span></td>
-      <td class='webring-next'><a href='${sites[nextIndex]}'>next →</a></td>
-    </tr>
-  </table>
-  `);
-
+  if (thisSite.startsWith(sites[i]) == thisSite.startsWith(indexPage)) {
+    // red-onionring.js: this is the code that displays the widget if you include it as 
+    // part of the ring in the sites variable. 
+    // EDIT THIS if you want to change the structure
+    tag.insertAdjacentHTML('afterbegin', `
+      <table>
+        <tr>
+          <td class='webring-prev'><a href='${sites[previousIndex]}'>← previous</a></td>
+          <td class='webring-info'>This site is the index of the ${ringName} webring</br>
+          <span class='webring-links'>
+            ${randomText}
+            ${indexText}
+            <a href='https://garlic.garden/onionring/'>what is this?</a></span></td>
+          <td class='webring-next'><a href='${sites[nextIndex]}'>next →</a></td>
+        </tr>
+      </table>
+      `);
+  } 
+  else {
+    //this is the code that displays the widget - EDIT THIS if you want to change the structure
+    tag.insertAdjacentHTML('afterbegin', `
+    <table>
+      <tr>
+        <td class='webring-prev'><a href='${sites[previousIndex]}'>← previous</a></td>
+        <td class='webring-info'>This site is part of the ${ringName} webring</br>
+        <span class='webring-links'>
+          ${randomText}
+          ${indexText}
+          <a href='https://garlic.garden/onionring/'>what is this?</a></span></td>
+        <td class='webring-next'><a href='${sites[nextIndex]}'>next →</a></td>
+      </tr>
+    </table>
+    `);
+  }
 }
