@@ -2,6 +2,7 @@
 red-onionring.js is an onionring.js fork with additional features:
 - Option to alphabetically sort the webring and index page list
 - Displaying the onionring widget on the index site shows separate text that can be modified
+- The index widget displays a sites counter (how many sites in the webring)
 
 ## To Do
 - A more robust index widget that includes owner names, descriptions, and more
