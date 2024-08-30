@@ -18,4 +18,5 @@ onionring.js is made up of four files:
 - onionring.css
 
 it's licensed under the cooperative non-violent license (CNPL) v4+ (https://thufie.lain.haus/NPL.html)
+
 it was originally made by joey + mord of allium (蒜) house, last updated 2020-11-24
