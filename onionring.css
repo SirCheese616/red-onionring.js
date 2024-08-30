@@ -2,6 +2,9 @@
 // it's licensed under the cooperative non-violent license (CNPL) v4+ (https://thufie.lain.haus/NPL.html)
 // it was originally made by joey + mord of allium (蒜) house, last updated 2020-10-24 */
 
+/* red-onionring.js is an onionring.js fork with additional features
+// https://github.com/cheesepak/red-onionring.js */
+
 /* === ONIONRING.CSS === */
 /* this file affects the style of the widget. remember to replace all instances of #webringid with whatever value you have for ringID in the onionring-widget.js file. make sure it still has the # at the front, though! probably easiest to use find+replace to do it */
 
