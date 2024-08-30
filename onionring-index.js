@@ -2,6 +2,9 @@
 // it's licensed under the cooperative non-violent license (CNPL) v4+ (https://thufie.lain.haus/NPL.html)
 // it was originally made by joey + mord of allium (蒜) house, last updated 2020-11-24
 
+// red-onionring.js is an onionring.js fork with additional features
+// https://github.com/cheesepak/red-onionring.js
+
 // === ONIONRING-INDEX ===
 //this file builds the list of sites in the ring for displaying on your index page
 
@@ -14,7 +17,8 @@ for (i = 0; i < sites.length; i++) {
 }
 
 tag.insertAdjacentHTML('afterbegin', `
-<ul>
-${list}
-</ul>
+  <span>the ${ringName} webring includes ${sites.length} sites</span>
+  <ul>
+    ${list}
+  </ul>
 `);
