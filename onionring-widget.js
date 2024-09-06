@@ -2,8 +2,8 @@
 // it's licensed under the cooperative non-violent license (CNPL) v4+ (https://thufie.lain.haus/NPL.html)
 // it was originally made by joey + mord of allium (蒜) house, last updated 2020-11-24
 
-// red-onionring.js is an onionring.js fork with additional features
-// https://github.com/cheesepak/red-onionring.js
+// --- red-onionring.js is an onionring.js fork with additional features ------------------------------
+// --- https://github.com/cheesepak/red-onionring.js --------------------------------------------------
 
 // === ONIONRING-WIDGET ===
 //this file contains the code which builds the widget shown on each page in the ring. ctrl+f 'EDIT THIS' if you're looking to change the actual html of the widget
@@ -63,8 +63,7 @@ else {
   }
 
   if (thisSite.startsWith(sites[i]) == thisSite.startsWith(indexPage)) {
-    // red-onionring.js: this is the code that displays the widget if you include it as 
-    // part of the ring in the sites variable. 
+    // --- red-onionring.js: this is the code that displays the widget if you include it as part of the ring in the sites variable. 
     // EDIT THIS if you want to change the structure
     tag.insertAdjacentHTML('afterbegin', `
       <table>
